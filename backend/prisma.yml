@@ -1,0 +1,7 @@
+#endpoint: ${env:PRISMA_ENDPOINT}
+endpoint: https://etd-production-6d7591d7ef.herokuapp.com/etd-prod/prod
+datamodel: datamodel.prisma
+secret: ${env:PRISMA_SECRET}
+hooks:
+  post-deploy:
+    - graphql get-schema --project prisma

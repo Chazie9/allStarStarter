@@ -1,0 +1,31 @@
+enum Permission {
+  ADMIN
+  USER
+  ITEMCREATE
+  ITEMUPDATE
+  ITEMDELETE
+  PERMISSIONUPDATE
+}
+
+type User {
+  id: ID! @unique
+  avatar: String
+  name: String! 
+  firstName: String
+  lastName: String
+  bio: String
+  website: String
+  email: String! @unique
+  password: String!
+  resetToken: String
+  resetTokenExpiry: String
+  permissions: [Permission]
+  city: String
+  state: String
+  country: String
+  amznUsId: String
+  twitter: String
+  instagram: String
+  facebook: String
+  youtube: String
+}
